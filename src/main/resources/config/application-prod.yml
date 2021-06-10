@@ -17,6 +17,7 @@ logging:
   level:
     ROOT: INFO
     io.github.jhipster: INFO
+    com.acme.graphql: INFO
     myapp: INFO
 
 management:

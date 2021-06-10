@@ -1,0 +1,37 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "student",
+      "otherEntityName": "student",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "library"
+    },
+    {
+      "relationshipName": "teacher",
+      "otherEntityName": "teacher",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "library"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20210602125753",
+  "dto": "mapstruct",
+  "searchEngine": false,
+  "service": "serviceImpl",
+  "entityTableName": "library",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": true,
+  "pagination": "pagination"
+}
