@@ -42,8 +42,8 @@ public class Director implements Serializable {
     @JsonIgnoreProperties(value = "directors", allowSetters = true)
     private Country country;
 
-//    @OneToMany(mappedBy = "director", fetch = FetchType.LAZY)
-//    private Set<Student> students = new HashSet<>();
+    public Director() {
+    }
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {

@@ -42,6 +42,9 @@ public class Teacher implements Serializable {
     @NotNull
     private Country country;
 
+    public Teacher() {
+    }
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;

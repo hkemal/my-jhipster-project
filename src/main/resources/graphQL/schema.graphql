@@ -1,0 +1,13 @@
+#type Director{
+#    id: ID
+#    name: String
+#    teacher : Teacher
+#}
+#
+#type Teacher{
+#    name: String
+#}
+#
+#type Query{
+#    getDirector(id :Int): Director
+#}

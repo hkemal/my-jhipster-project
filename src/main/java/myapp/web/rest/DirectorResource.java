@@ -1,5 +1,6 @@
 package myapp.web.rest;
 
+//import myapp.domain.Director;
 import myapp.service.DirectorService;
 import myapp.service.dto.DirectorInputDTO;
 import myapp.service.dto.DirectorResultDTO;
@@ -9,8 +10,10 @@ import myapp.service.DirectorQueryService;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+//import myapp.web.rest.resolver.DirectorResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,6 +40,9 @@ public class DirectorResource {
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
+
+//    @Autowired
+//    DirectorResolver directorReolver;
 
     private final DirectorService directorService;
 
@@ -75,7 +81,7 @@ public class DirectorResource {
     @PutMapping("/directors")
     public ResponseEntity<DirectorResultDTO> updateDirector(Long id, @RequestBody DirectorInputDTO directorInputDTO) throws URISyntaxException {
         log.debug("REST request to update Director : {}", directorInputDTO);
-        DirectorResultDTO result = directorService.update(id,directorInputDTO );
+        DirectorResultDTO result = directorService.update(id, directorInputDTO);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, directorInputDTO.getName().toString()))
             .body(result);
@@ -108,6 +114,13 @@ public class DirectorResource {
         Optional<DirectorResultDTO> directorDTO = directorService.findOne(id);
         return ResponseUtil.wrapOrNotFound(directorDTO);
     }
+
+//    @GetMapping("/directors/{id}")
+//    public Director getDirector(@PathVariable Long id) {
+//        log.debug("REST request to get Director : {}", id);
+//        Director director = directorReolver.getDirector(id);
+//        return director;
+//    }
 
     /**
      * {@code DELETE  /directors/:id} : delete the "id" director.
